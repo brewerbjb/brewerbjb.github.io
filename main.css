@@ -28,6 +28,7 @@ select{
 
 #form {
 	margin-left: 20%;
+	margin-right: 15%;
 	}
 	
 #header {
@@ -48,19 +49,15 @@ select{
 	background-color: #80ccff;
 }
 
-/* Mobile Styles */
-@media only screen and (max-width: 400px) {
-  body {
-    background-color: #F09A9D; /* Red */
-  }
-}
-
-/* Tablet Styles */
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+@media all and (orientation:portrait) { 
 #form {
 	margin-left: 5%;
 	}
-/* Desktop Styles */
-@media only screen and (min-width: 961px) {
+h1{
+	font-size: 4em;
 }
-
+h3{
+	font-size: 3.4em;
+}
+ }
+@media all and (orientation:landscape) { … }
