@@ -1,6 +1,74 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Intimidation Test</title>
+<link rel="stylesheet" href="main.css">
+</head>
 <body>
-<h1>Hello</h1>
+<div id = "header">
+	<h1>How intimidating are the people of Earhart Cru?</h1>
+</div>
+<form id="form" onsubmit="return false;">
+	<h3>Threatens to kick me out of the GroupMe I'm not even in.<h3>
+	<select name="Question1" id = "input1">
+		<option value="1">1 - Never</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 - Definitely</option>
+	</select>
+	<h3>Says Hi to me if they see me around campus.<h3>
+	<select name="Question2" id = "input2">
+		<option value="1">1 - Always</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 - Never</option>
+	</select>
+	<h3>Purposely avoids sitting in a chair next to me.<h3>
+	<select name="Question3" id = "input3">
+		<option value="1">1 - Never</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 - Always</option>
+	</select>
+	<h3>Tries to be in control everything.<h3>
+	<select name="Question4" id = "input4">
+		<option value="1">1 - Never</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 - Always</option>
+	</select>
+	<h3>Tries to control everything<h3>
+	<select name="Question5" id = "input5">
+		<option value="1">1 - Never</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 - Always</option>
+	</select>
+    <br>
+	<input class = "button" type="submit" onclick="submitScore();" />
+</form>
 </body>
+<script>
+function submitScore() {
+    var e = document.getElementById("input1");
+	var value1 = e.options[e.selectedIndex].value;
+	var e = document.getElementById("input2");
+	var value2 = e.options[e.selectedIndex].value;
+    var e = document.getElementById("input3");
+	var value3 = e.options[e.selectedIndex].value;
+	var e = document.getElementById("input4");
+	var value4 = e.options[e.selectedIndex].value;
+	var e = document.getElementById("input5");
+	var value5 = e.options[e.selectedIndex].value;
+	
+	var score = parseInt(value1)+parseInt(value2)+parseInt(value3)+parseInt(value4)+parseInt(value5);
+	score = score*4;
+    alert(score);
+}
+</script>
 </html>
