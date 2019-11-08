@@ -1,3 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  body {
+    background-color: #F09A9D; /* Red */
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+body {
+	Font-Family: Arial;
+	margin: 0;
+	padding: 0;
+	background-color: #ccebff;
+}
+
+h1{
+	text-align: center;
+	padding-top: 2vh;
+	color: #e6f5ff;
+	font-size: 30pt;
+}
+h3{
+	margin: 3vh 0vh -2vh 0vh;
+	font-size: 20pt;
+}
+
+select{
+	margin: 0vh 0vh 4vh 0vh;
+}
+
+#form {
+	margin-left: 5%;
+	}
+	
+#header {
+	width: 100%;
+	height: 20vh;
+	background-color: #008ae6;
+	box-shadow: gray 0px 0px 5px;
+}
+
+.button {
+	background-color: #003d66;
+	border: 1px solid #003d66;
+	padding: 1vh 2% 1vh 2%;
+	min-width: 100px;
+	color: white;
+}
+
+.button:hover {
+	background-color: #80ccff;
+}
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
 body {
 	Font-Family: Arial;
 	margin: 0;
@@ -26,7 +89,6 @@ select{
 	width: 100%;
 	height: 10vh;
 	background-color: #008ae6;
-	margin-top: -3vh;
 	box-shadow: gray 0px 0px 5px;
 }
 
@@ -41,3 +103,5 @@ select{
 .button:hover {
 	background-color: #80ccff;
 }
+}
+
