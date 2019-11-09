@@ -7,13 +7,10 @@ body {
 	Font-Family: Arial;
 	margin: 0;
 	padding: 0;
-	background-color: #ccebff;
 }
 
 h1{
-	text-align: center;
 	padding: 2vh 0 2vh 0;
-	color: #e6f5ff;
 	font-size: 2em;
 }
 h3{
@@ -30,11 +27,6 @@ select{
 	margin-left: 20%;
 	margin-right: 15%;
 	}
-	
-#header {
-	width: 100%;
-	background-color: #008ae6;
-	box-shadow: gray 0px 0px 5px;
 }
 
 .button {
@@ -48,16 +40,3 @@ select{
 .button:hover {
 	background-color: #80ccff;
 }
-
-@media all and (orientation:portrait) { 
-#form {
-	margin-left: 5%;
-	}
-h1{
-	font-size: 4em;
-}
-h3{
-	font-size: 3.4em;
-}
- }
-@media all and (orientation:landscape) { … }
