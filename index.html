@@ -5,69 +5,168 @@
 <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<form id="form" onsubmit="return false;">
+<div id="form">
 	<h1>Intimidation Test</h1>
 	<hr>
-	<h3>Threatens to kick me out of the GroupMe I'm not even in.<h3>
-	<select name="Question1" id = "input1">
+	
+	<!--<select name="Question1" id = "input1">
 		<option value="1">1 - Never</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5 - Definitely</option>
-	</select>
-	<h3>Says Hi to me if they see me around campus.<h3>
-	<select name="Question2" id = "input2">
+	</select>-->
+	<form id = "input1" onchange="updateResult()">
+		<h3>Threatens to kick me out of the GroupMe I'm not even in.</h3>
+		<input type="radio" name="Question1" value="1" checked> 1 - Never<br>
+		<input type="radio" name="Question1" value="2"> 2<br>
+		<input type="radio" name="Question1" value="3"> 3<br>
+		<input type="radio" name="Question1" value="4"> 4<br>
+		<input type="radio" name="Question1" value="5"> 5 - Always 
+	</form> 
+	
+	<!--<select name="Question2" id = "input2">
 		<option value="1">1 - Always</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5 - Never</option>
-	</select>
-	<h3>Purposely avoids sitting in a chair next to me.<h3>
-	<select name="Question3" id = "input3">
+	</select>-->
+	<form id = "input2" onchange="updateResult()">
+		<h3>Says Hi to me if they see me around campus.</h3>
+		<input type="radio" name="Question2" value="1" checked> 1 - Always<br>
+		<input type="radio" name="Question2" value="2"> 2<br>
+		<input type="radio" name="Question2" value="3"> 3<br>
+		<input type="radio" name="Question2" value="4"> 4<br>
+		<input type="radio" name="Question2" value="5"> 5 - Never 
+	</form> 
+
+	<!--<select name="Question3" id = "input3">
 		<option value="1">1 - Never</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5 - Always</option>
-	</select>
-	<h3>Tries to be in control everything.<h3>
-	<select name="Question4" id = "input4">
+	</select>-->
+	<form id = "input3" onchange="updateResult()">
+		<h3>Purposely avoids sitting in a chair next to me.</h3>
+		<input type="radio" name="Question3" value="1" checked> 1 - Never<br>
+		<input type="radio" name="Question3" value="2"> 2<br>
+		<input type="radio" name="Question3" value="3"> 3<br>
+		<input type="radio" name="Question3" value="4"> 4<br>
+		<input type="radio" name="Question3" value="5"> 5 - Always 
+	</form> 
+
+	<!--<select name="Question4" id = "input4">
 		<option value="1">1 - Never</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5 - Always</option>
-	</select>
-	<h3>Tries to control everything<h3>
-	<select name="Question5" id = "input5">
+	</select>-->
+	<form id = "input4" onchange="updateResult()">
+		<h3>Tries to be in control everything.</h3>
+		<input type="radio" name="Question4" value="1" checked> 1 - Never<br>
+		<input type="radio" name="Question4" value="2"> 2<br>
+		<input type="radio" name="Question4" value="3"> 3<br>
+		<input type="radio" name="Question4" value="4"> 4<br>
+		<input type="radio" name="Question4" value="5"> 5 - Always 
+	</form> 
+
+	<!--<select name="Question5" id = "input5">
 		<option value="1">1 - Never</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
 		<option value="4">4</option>
 		<option value="5">5 - Always</option>
-	</select>
+	</select>-->
+	<form id = "input5" onchange="updateResult()">
+		<h3>Tries to control everything.</h3>
+		<input type="radio" name="Question5" value="1" checked> 1 - Never<br>
+		<input type="radio" name="Question5" value="2"> 2<br>
+		<input type="radio" name="Question5" value="3"> 3<br>
+		<input type="radio" name="Question5" value="4"> 4<br>
+		<input type="radio" name="Question5" value="5"> 5 - Always 
+	</form> 
     <br>
-	<input class = "button" type="submit" onclick="submitScore();" />
-</form>
+	<p id = "p1">Score: 0/100</p>
+	<!--<input class = "button" type="submit" onclick="submitScore();" />-->
+</div>
 </body>
 <script>
+var v1Weight = 5;
+var v2Weight = 5;
+var v3Weight = 5;
+var v4Weight = 5;
+var v5Weight = 5;
+
+function updateResult(){
+document.getElementById("p1").innerHTML = "Score: " + getScore() + "/100";
+}
+
 function submitScore() {
-    var e = document.getElementById("input1");
-	var value1 = e.options[e.selectedIndex].value;
-	var e = document.getElementById("input2");
-	var value2 = e.options[e.selectedIndex].value;
-    var e = document.getElementById("input3");
-	var value3 = e.options[e.selectedIndex].value;
-	var e = document.getElementById("input4");
-	var value4 = e.options[e.selectedIndex].value;
-	var e = document.getElementById("input5");
-	var value5 = e.options[e.selectedIndex].value;
+    var e = document.getElementById('input1');
+	var value1 = getRadioVal(e,'Question1');
 	
-	var score = parseInt(value1)+parseInt(value2)+parseInt(value3)+parseInt(value4)+parseInt(value5);
+	var e = document.getElementById('input2');
+	var value2 = getRadioVal(e,'Question2');
+	
+	var e = document.getElementById('input3');
+	var value3 = getRadioVal(e,'Question3');
+
+	var e = document.getElementById('input4');
+	var value4 = getRadioVal(e,'Question4');
+	
+	var e = document.getElementById('input5');
+	var value5 = getRadioVal(e,'Question5');
+	
+	var score = parseInt(value1)+parseInt(value2)+parseInt(value3)+parseInt(value4);+parseInt(value5);
 	score = score*4;
     alert(score);
+}
+
+function getScore() {
+	var score = 5;
+
+    var e = document.getElementById('input1');
+	var value1 = getRadioVal(e,'Question1') - 1;
+	score = parseInt(value1)*v1Weight;
+
+	var e = document.getElementById('input2');
+	var value2 = getRadioVal(e,'Question2') - 1;
+	score += parseInt(value2)*v2Weight;
+	
+	var e = document.getElementById('input3');
+	var value3 = getRadioVal(e,'Question3') - 1;
+	score += parseInt(value3)*v3Weight;
+
+	var e = document.getElementById('input4');
+	var value4 = getRadioVal(e,'Question4') - 1;
+	score += parseInt(value4)*v4Weight;
+	
+	var e = document.getElementById('input5');
+	var value5 = getRadioVal(e,'Question5') - 1;
+	score += parseInt(value5)*v5Weight;
+	
+	//var score = parseInt(value1)+parseInt(value2)+parseInt(value3)+parseInt(value4);+parseInt(value5);
+	//score = score*4;
+    
+	return score;
+}
+
+function getRadioVal(form, name) {
+    var val;
+    // get list of radio buttons with specified name
+    var radios = form.elements[name];
+    
+    // loop through list of radio buttons
+    for (var i=0, len=radios.length; i<len; i++) {
+        if ( radios[i].checked ) { // radio checked?
+            val = radios[i].value; // if so, hold its value in val
+            break; // and break out of for loop
+        }
+    }
+    return val; // return value of checked radio or undefined if none checked
 }
 </script>
 </html>

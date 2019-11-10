@@ -10,13 +10,18 @@ body {
 }
 
 h1{
-	padding: 2vh 0 2vh 0;
-	font-size: 2em;
+	padding: 5vh 0 1vh 0;
+	font-size: 2.8em;
+	font-weight: normal;
 }
 h3{
-	margin: 3vh 0vh -2vh 0vh;
-	font-size: 1.3em;
+	margin: 2vh 0vh 1vh 0vh;
+	font-size: 1.1em;
 	font-weight: normal;
+}
+
+input[type=radio]{
+	margin-left: 2%;
 }
 
 select{
@@ -24,9 +29,20 @@ select{
 }
 
 #form {
-	margin-left: 20%;
+	margin-left: 15%;
 	margin-right: 15%;
+	margin-bottom: 4vh;
 	}
+	
+#header {
+	width: 100%;
+	background-color: #008ae6;
+	box-shadow: gray 0px 0px 5px;
+}
+
+HR {
+	border: .5px solid black;
+	
 }
 
 .button {
@@ -38,5 +54,7 @@ select{
 }
 
 .button:hover {
-	background-color: #80ccff;
+	background-color: #135886;
 }
+
+
