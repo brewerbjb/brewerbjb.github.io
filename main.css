@@ -57,4 +57,13 @@ HR {
 	background-color: #135886;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+#form {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 4vh;
+	}
+}
+
 
